@@ -25,6 +25,7 @@ public class ProxyFactory implements MethodInterceptor {
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
         System.out.println("代售点收取费用（CGLIB）");
+        System.out.println(method.getName());
         // 要调用目标对象的方法
         return method.invoke(station, args);
     }
